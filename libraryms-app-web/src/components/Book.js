@@ -129,8 +129,8 @@ export default class Book extends Component {
             show={this.state.show}
             message={
               this.state.method === "put"
-                ? "Book was updated successfully."
-                : "Book was saved successfully."
+                ? "图书更新成功。"
+                : "图书保存成功。"
             }
             type={"success"}
           />
@@ -138,7 +138,7 @@ export default class Book extends Component {
         <Card className={"border border-dark bg-dark text-white"}>
           <Card.Header>
             <FontAwesomeIcon icon={this.state.id ? faEdit : faPlusSquare} />
-            {this.state.id ? "Update Book" : "Add New Book"}
+            {this.state.id ? "编辑图书" : "添加新图书"}
           </Card.Header>
           <Form
             onReset={this.resetBook}
@@ -148,7 +148,7 @@ export default class Book extends Component {
             <Card.Body>
               <Form.Row>
                 <Form.Group as={Col} controlId="formGridTitle">
-                  <Form.Label>Title</Form.Label>
+                  <Form.Label>书名</Form.Label>
                   <Form.Control
                     required
                     autoComplete="off"
@@ -157,11 +157,11 @@ export default class Book extends Component {
                     value={title}
                     onChange={this.bookChange}
                     className={"bg-dark text-white"}
-                    placeholder="Enter Book Title"
+                    placeholder="请输入书名"
                   />
                 </Form.Group>
                 <Form.Group as={Col} controlId="formGridAuthor">
-                  <Form.Label>Author</Form.Label>
+                  <Form.Label>作者</Form.Label>
                   <Form.Control
                     required
                     autoComplete="off"
@@ -170,13 +170,13 @@ export default class Book extends Component {
                     value={author}
                     onChange={this.bookChange}
                     className={"bg-dark text-white"}
-                    placeholder="Enter Book Author"
+                    placeholder="请输入作者"
                   />
                 </Form.Group>
               </Form.Row>
               <Form.Row>
                 <Form.Group as={Col} controlId="formGridIsbn">
-                  <Form.Label>Isbn</Form.Label>
+                  <Form.Label>ISBN</Form.Label>
                   <Form.Control
                     required
                     autoComplete="off"
@@ -185,11 +185,11 @@ export default class Book extends Component {
                     value={isbn}
                     onChange={this.bookChange}
                     className={"bg-dark text-white"}
-                    placeholder="Enter Book ISBN"
+                    placeholder="请输入 ISBN"
                   />
                 </Form.Group>
                 <Form.Group as={Col} controlId="formGridRating">
-                  <Form.Label>Rating</Form.Label>
+                  <Form.Label>评分</Form.Label>
                   <Form.Control
                     required
                     autoComplete="off"
@@ -198,7 +198,7 @@ export default class Book extends Component {
                     value={rating}
                     onChange={this.bookChange}
                     className={"bg-dark text-white"}
-                    placeholder="Enter Book Rating"
+                    placeholder="请输入评分"
                   />
                 </Form.Group>
               </Form.Row>
@@ -206,12 +206,12 @@ export default class Book extends Component {
             <Card.Footer style={{ textAlign: "right" }}>
               <Button size="sm" variant="success" type="submit">
                 <FontAwesomeIcon icon={faSave} />{" "}
-                {this.state.id ? "Update" : "Save"}
+                {this.state.id ? "更新" : "保存"}
                 {""}
               </Button>{" "}
               <Button size="sm" variant="info" type="reset">
                 <FontAwesomeIcon icon={faUndo} />
-                Reset
+                重置
               </Button>{" "}
               <Button
                 size="sm"
@@ -220,7 +220,7 @@ export default class Book extends Component {
                 onClick={this.bookList.bind()}
               >
                 <FontAwesomeIcon icon={faList} />
-                Book List
+                图书列表
               </Button>
             </Card.Footer>
           </Form>

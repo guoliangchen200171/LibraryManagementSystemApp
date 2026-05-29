@@ -17,22 +17,22 @@ class NavigationBar extends Component {
         </Link>
         <Nav className="mr-auto">
           <Link to={"/add"} className="nav-link">
-            Add Book
+            添加图书
           </Link>
           <Link to={"/list"} className="nav-link">
-            Book Listing
+            图书列表
           </Link>
           <Link to={"/loan/add"} className="nav-link">
-            Add Loan
+            添加借阅
           </Link>
           <Link to={"/loan/list"} className="nav-link">
-            Loan Listing
+            借阅列表
           </Link>
           <Link to={"/member/add"} className="nav-link">
-            Add Member
+            添加会员
           </Link>
           <Link to={"/member/list"} className="nav-link">
-            Member Listing
+            会员列表
           </Link>
         </Nav>
       </Navbar>

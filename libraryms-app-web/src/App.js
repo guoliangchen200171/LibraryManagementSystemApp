@@ -40,7 +40,7 @@ function App() {
           </Col>
         </Row>
       </Container>
-      <p>Library Management System</p>
+      <p>图书馆管理系统</p>
 
       <Footer />
     </Router>

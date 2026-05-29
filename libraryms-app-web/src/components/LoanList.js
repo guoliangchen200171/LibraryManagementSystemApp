@@ -41,31 +41,31 @@ export default class LoanList extends Component {
         <div style={{ display: this.state.show ? "block" : "none" }}>
           <MyToast
             show={this.state.show}
-            message={"Loan was deleted successfully."}
+            message={"借阅记录删除成功。"}
             type={"danger"}
           />
         </div>
         <Card className={"border border-dark bg-dark text-white"}>
           <Card.Header>
             <FontAwesomeIcon icon={faList} /> {"  "}
-            Loan List
+            借阅列表
           </Card.Header>
           <Card.Body>
             <Table striped bordered hover variant="dark">
               <thead>
                 <tr>
-                  <th>Book</th>
-                  <th>Member</th>
-                  <th>Checkout Date</th>
-                  <th>Due Date</th>
-                  <th>Return Date</th>
-                  <th>Actions</th>
+                  <th>图书</th>
+                  <th>会员</th>
+                  <th>借出日期</th>
+                  <th>应还日期</th>
+                  <th>归还日期</th>
+                  <th>操作</th>
                 </tr>
               </thead>
               <tbody>
                 {this.state.loans.length === 0 ? (
                   <tr align="center">
-                    <td colSpan="6">No loans found.</td>
+                    <td colSpan="6">暂无借阅记录。</td>
                   </tr>
                 ) : (
                   this.state.loans.map((loan) => (
@@ -74,7 +74,7 @@ export default class LoanList extends Component {
                       <td>{loan.member.name}</td>
                       <td>{loan.checkoutDate}</td>
                       <td>{loan.dueDate}</td>
-                      <td>{loan.returnDate ? loan.returnDate : "Not returned"}</td>
+                      <td>{loan.returnDate ? loan.returnDate : "未归还"}</td>
                       <td>
                         <ButtonGroup>
                           <Link
@@ -89,7 +89,7 @@ export default class LoanList extends Component {
                             variant="outline-danger"
                             onClick={this.deleteLoan.bind(this, loan.id)}
                           >
-                            Delete <FontAwesomeIcon icon={faTrash} />
+                            删除 <FontAwesomeIcon icon={faTrash} />
                           </Button>
                         </ButtonGroup>
                       </td>

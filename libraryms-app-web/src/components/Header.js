@@ -15,7 +15,7 @@ export default class Header extends Component {
           />
         </div>
 
-        <div className="col-md-7 mt-5 subtitle">Library Management System</div>
+        <div className="col-md-7 mt-5 subtitle">图书馆管理系统</div>
       </header>
     );
   }

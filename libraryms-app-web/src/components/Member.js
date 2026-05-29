@@ -123,8 +123,8 @@ export default class Member extends Component {
             show={this.state.show}
             message={
               this.state.method === "put"
-                ? "Member was updated successfully."
-                : "Member was saved successfully."
+                ? "会员信息更新成功。"
+                : "会员信息保存成功。"
             }
             type={"success"}
           />
@@ -132,7 +132,7 @@ export default class Member extends Component {
         <Card className={"border border-dark bg-dark text-white"}>
           <Card.Header>
             <FontAwesomeIcon icon={this.state.id ? faEdit : faPlusSquare} />{" "}
-            {this.state.id ? "Update Member" : "Add New Member"}
+            {this.state.id ? "编辑会员" : "添加新会员"}
           </Card.Header>
           <Form
             onReset={this.resetMember}
@@ -142,7 +142,7 @@ export default class Member extends Component {
             <Card.Body>
               <Form.Row>
                 <Form.Group as={Col} controlId="formGridName">
-                  <Form.Label>Name</Form.Label>
+                  <Form.Label>姓名</Form.Label>
                   <Form.Control
                     required
                     autoComplete="off"
@@ -151,11 +151,11 @@ export default class Member extends Component {
                     value={name}
                     onChange={this.memberChange}
                     className={"bg-dark text-white"}
-                    placeholder="Enter Member Name"
+                    placeholder="请输入姓名"
                   />
                 </Form.Group>
                 <Form.Group as={Col} controlId="formGridEmail">
-                  <Form.Label>Email</Form.Label>
+                  <Form.Label>邮箱</Form.Label>
                   <Form.Control
                     required
                     autoComplete="off"
@@ -164,13 +164,13 @@ export default class Member extends Component {
                     value={email}
                     onChange={this.memberChange}
                     className={"bg-dark text-white"}
-                    placeholder="Enter Member Email"
+                    placeholder="请输入邮箱"
                   />
                 </Form.Group>
               </Form.Row>
               <Form.Row>
                 <Form.Group as={Col} controlId="formGridMembershipDate">
-                  <Form.Label>Membership Date</Form.Label>
+                  <Form.Label>入会日期</Form.Label>
                   <Form.Control
                     required
                     type="date"
@@ -181,7 +181,7 @@ export default class Member extends Component {
                   />
                 </Form.Group>
                 <Form.Group as={Col} controlId="formGridMembershipType">
-                  <Form.Label>Membership Type</Form.Label>
+                  <Form.Label>会员类型</Form.Label>
                   <Form.Control
                     required
                     as="select"
@@ -190,10 +190,10 @@ export default class Member extends Component {
                     onChange={this.memberChange}
                     className={"bg-dark text-white"}
                   >
-                    <option value="">-- Select a Type --</option>
-                    <option value="Standard">Standard</option>
-                    <option value="Premium">Premium</option>
-                    <option value="Student">Student</option>
+                    <option value="">-- 请选择类型 --</option>
+                    <option value="Standard">普通会员</option>
+                    <option value="Premium">高级会员</option>
+                    <option value="Student">学生会员</option>
                   </Form.Control>
                 </Form.Group>
               </Form.Row>
@@ -201,10 +201,10 @@ export default class Member extends Component {
             <Card.Footer style={{ textAlign: "right" }}>
               <Button size="sm" variant="success" type="submit">
                 <FontAwesomeIcon icon={faSave} />{" "}
-                {this.state.id ? "Update" : "Save"}
+                {this.state.id ? "更新" : "保存"}
               </Button>{" "}
               <Button size="sm" variant="info" type="reset">
-                <FontAwesomeIcon icon={faUndo} /> Reset
+                <FontAwesomeIcon icon={faUndo} /> 重置
               </Button>{" "}
               <Button
                 size="sm"
@@ -212,7 +212,7 @@ export default class Member extends Component {
                 type="button"
                 onClick={this.memberList.bind(this)}
               >
-                <FontAwesomeIcon icon={faList} /> Member List
+                <FontAwesomeIcon icon={faList} /> 会员列表
               </Button>
             </Card.Footer>
           </Form>

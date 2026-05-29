@@ -139,8 +139,8 @@ export default class Loan extends Component {
             show={this.state.show}
             message={
               this.state.method === "put"
-                ? "Loan was updated successfully."
-                : "Loan was saved successfully."
+                ? "借阅记录更新成功。"
+                : "借阅记录保存成功。"
             }
             type={"success"}
           />
@@ -148,7 +148,7 @@ export default class Loan extends Component {
         <Card className={"border border-dark bg-dark text-white"}>
           <Card.Header>
             <FontAwesomeIcon icon={this.state.id ? faEdit : faPlusSquare} />{" "}
-            {this.state.id ? "Update Loan" : "Add New Loan"}
+            {this.state.id ? "编辑借阅" : "添加新借阅"}
           </Card.Header>
           <Form
             onReset={this.resetLoan}
@@ -158,7 +158,7 @@ export default class Loan extends Component {
             <Card.Body>
               <Form.Row>
                 <Form.Group as={Col} controlId="formGridBook">
-                  <Form.Label>Book</Form.Label>
+                  <Form.Label>图书</Form.Label>
                   <Form.Control
                     required
                     as="select"
@@ -167,7 +167,7 @@ export default class Loan extends Component {
                     onChange={this.loanChange}
                     className={"bg-dark text-white"}
                   >
-                    <option value="">-- Select a Book --</option>
+                    <option value="">-- 请选择图书 --</option>
                     {this.state.books.map((book) => (
                       <option key={book.id} value={book.id}>
                         {book.title}
@@ -176,7 +176,7 @@ export default class Loan extends Component {
                   </Form.Control>
                 </Form.Group>
                 <Form.Group as={Col} controlId="formGridMember">
-                  <Form.Label>Member</Form.Label>
+                  <Form.Label>会员</Form.Label>
                   <Form.Control
                     required
                     as="select"
@@ -185,7 +185,7 @@ export default class Loan extends Component {
                     onChange={this.loanChange}
                     className={"bg-dark text-white"}
                   >
-                    <option value="">-- Select a Member --</option>
+                    <option value="">-- 请选择会员 --</option>
                     {this.state.members.map((member) => (
                       <option key={member.id} value={member.id}>
                         {member.name}
@@ -196,7 +196,7 @@ export default class Loan extends Component {
               </Form.Row>
               <Form.Row>
                 <Form.Group as={Col} controlId="formGridCheckoutDate">
-                  <Form.Label>Checkout Date</Form.Label>
+                  <Form.Label>借出日期</Form.Label>
                   <Form.Control
                     required
                     type="date"
@@ -207,7 +207,7 @@ export default class Loan extends Component {
                   />
                 </Form.Group>
                 <Form.Group as={Col} controlId="formGridDueDate">
-                  <Form.Label>Due Date</Form.Label>
+                  <Form.Label>应还日期</Form.Label>
                   <Form.Control
                     required
                     type="date"
@@ -218,7 +218,7 @@ export default class Loan extends Component {
                   />
                 </Form.Group>
                 <Form.Group as={Col} controlId="formGridReturnDate">
-                  <Form.Label>Return Date</Form.Label>
+                  <Form.Label>归还日期</Form.Label>
                   <Form.Control
                     type="date"
                     name="returnDate"
@@ -232,10 +232,10 @@ export default class Loan extends Component {
             <Card.Footer style={{ textAlign: "right" }}>
               <Button size="sm" variant="success" type="submit">
                 <FontAwesomeIcon icon={faSave} />{" "}
-                {this.state.id ? "Update" : "Save"}
+                {this.state.id ? "更新" : "保存"}
               </Button>{" "}
               <Button size="sm" variant="info" type="reset">
-                <FontAwesomeIcon icon={faUndo} /> Reset
+                <FontAwesomeIcon icon={faUndo} /> 重置
               </Button>{" "}
               <Button
                 size="sm"
@@ -243,7 +243,7 @@ export default class Loan extends Component {
                 type="button"
                 onClick={this.loanList.bind(this)}
               >
-                <FontAwesomeIcon icon={faList} /> Loan List
+                <FontAwesomeIcon icon={faList} /> 借阅列表
               </Button>
             </Card.Footer>
           </Form>

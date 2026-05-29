@@ -41,30 +41,30 @@ export default class MemberList extends Component {
         <div style={{ display: this.state.show ? "block" : "none" }}>
           <MyToast
             show={this.state.show}
-            message={"Member was deleted successfully."}
+            message={"会员删除成功。"}
             type={"danger"}
           />
         </div>
         <Card className={"border border-dark bg-dark text-white"}>
           <Card.Header>
             <FontAwesomeIcon icon={faList} /> {"  "}
-            Member List
+            会员列表
           </Card.Header>
           <Card.Body>
             <Table striped bordered hover variant="dark">
               <thead>
                 <tr>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Membership Date</th>
-                  <th>Membership Type</th>
-                  <th>Actions</th>
+                  <th>姓名</th>
+                  <th>邮箱</th>
+                  <th>入会日期</th>
+                  <th>会员类型</th>
+                  <th>操作</th>
                 </tr>
               </thead>
               <tbody>
                 {this.state.members.length === 0 ? (
                   <tr align="center">
-                    <td colSpan="5">No members found.</td>
+                    <td colSpan="5">暂无会员记录。</td>
                   </tr>
                 ) : (
                   this.state.members.map((member) => (
@@ -87,7 +87,7 @@ export default class MemberList extends Component {
                             variant="outline-danger"
                             onClick={this.deleteMember.bind(this, member.id)}
                           >
-                            Delete <FontAwesomeIcon icon={faTrash} />
+                            删除 <FontAwesomeIcon icon={faTrash} />
                           </Button>
                         </ButtonGroup>
                       </td>

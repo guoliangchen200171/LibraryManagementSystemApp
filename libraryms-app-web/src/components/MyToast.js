@@ -27,7 +27,7 @@ export default class MyToast extends Component {
             }`}
             closeButton={false}
           >
-            <strong className="mr-auto">Success</strong>
+            <strong className="mr-auto">成功</strong>
           </Toast.Header>
           <Toast.Body>{this.props.message}</Toast.Body>
         </Toast>

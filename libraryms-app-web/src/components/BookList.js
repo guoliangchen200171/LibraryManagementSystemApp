@@ -45,7 +45,7 @@ export default class BookList extends Component {
         <div style={{ display: this.state.show ? "block" : "none" }}>
           <MyToast
             show={this.state.show}
-            message={"Book was deleted successfully."}
+            message={"图书删除成功。"}
             type={"danger"}
           />
         </div>
@@ -53,17 +53,17 @@ export default class BookList extends Component {
           <Card.Header>
             {" "}
             <FontAwesomeIcon icon={faList} /> {"  "}
-            Book List
+            图书列表
           </Card.Header>
           <Card.Body>
             <Table striped bordered hover variant="dark">
               <thead>
                 <tr>
-                  <th>Title</th>
-                  <th>Author</th>
-                  <th>ISBN Number</th>
-                  <th>Rating</th>
-                  <th>Actions</th>
+                  <th>书名</th>
+                  <th>作者</th>
+                  <th>ISBN 编号</th>
+                  <th>评分</th>
+                  <th>操作</th>
                 </tr>
               </thead>
               <tbody>
@@ -93,7 +93,7 @@ export default class BookList extends Component {
                             variant="outline-danger"
                             onClick={this.deleteBook.bind(this, book.id)}
                           >
-                            Delete <FontAwesomeIcon icon={faTrash} />
+                            删除 <FontAwesomeIcon icon={faTrash} />
                           </Button>
                         </ButtonGroup>
                       </td>

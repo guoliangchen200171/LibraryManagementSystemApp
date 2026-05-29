@@ -7,7 +7,7 @@ export default class Footer extends Component {
       <Navbar fixed="bottom" bg="primary" variant="dark">
         <Container>
           <Col lg={12} className="text-center text-muted">
-            <div>Capstone Project June 2020</div>
+            <div>图书馆管理系统 2020</div>
           </Col>
         </Container>
       </Navbar>
