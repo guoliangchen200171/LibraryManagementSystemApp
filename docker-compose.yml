@@ -1,0 +1,20 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: libraryms-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root}
+      MYSQL_DATABASE: libraryms_db
+    ports:
+      - "${MYSQL_PORT:-3307}:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./libraryms-app-data/docker-init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p${MYSQL_ROOT_PASSWORD:-root}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mysql_data:
